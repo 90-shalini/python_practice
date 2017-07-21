@@ -1,0 +1,27 @@
+
+Jinja2: templating language for Python
+
+Basic way is to create a template using render function
+
+So , in our case:
+    1. Basic example:
+        template = Template('Hello {{name}}!')  # template is new Template object
+        template.render(name='Shalini')  # arguments in render() method i.e. dict or keywords to expand the template DICT or keywords
+
+	2. We have templates e.g create/read.xml
+
+	In create.xml:
+	<>
+		<>
+		<>{{Dict_values.key1}}</>
+		<>{{Dict_values.key2}}</>
+		</>
+	</>
+	
+	We have central object: template Environment
+	Instances of this class will be used to store configs, globals to load templates from file system
+	
+	Env = Environment(loader = FileSystemLoader(template_path),
+					Trim_blocks = False)
+	Env.getTemplate().render(Dict_values = Dict_values) #template.render(the='variables', go='here')
+	
