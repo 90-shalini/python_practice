@@ -1,0 +1,40 @@
+Feature: Test calling multiple scenarios from different feature files
+
+  Scenario: Dummy Test_case
+
+  Scenario: Test multiple parameters
+
+  Scenario: run a simple test1
+
+Feature: Test Behave
+
+  Scenario: Test multiple parameters
+    Given I go to the meeting ... passed in 0.001s
+    When I meet "Alice", "Bob", "Charly", "Dodo" ... passed in 0.003s
+    And i want to meet "Alice, Bob" ... undefined in 0.000s
+
+Feature: TestTable
+
+  Scenario: To test behave table
+    Given Users visited ... passed in 0.004s
+      | Name    | Company  |
+      | Shalini | Planview |
+      | Vibhor  | Cisco    |
+    When i checked ... passed in 0.000s
+
+Feature: showing off behave
+
+  Scenario: run a simple test1
+    Given we have behave installed ... passed in 0.000s
+    When we implement a test ... failed in 0.001s
+Assertion Failed: FAILED SUB-STEP: When we implement a test1
+Substep info: Traceback (most recent call last):
+  File "c:\users\sarora\appdata\local\programs\python\python35-32\lib\site-packages\behave\model.py", line 1456, in run
+    match.run(runner.context)
+  File "c:\users\sarora\appdata\local\programs\python\python35-32\lib\site-packages\behave\model.py", line 1903, in run
+    self.func(context, *args, **kwargs)
+  File "steps\tutorial.py", line 21, in step_impl
+    assert True is not True
+AssertionError
+
+
